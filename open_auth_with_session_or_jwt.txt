@@ -1,0 +1,40 @@
+# Session
+[client]                            [server]                            [OPEN API]
+        --------------------------->        --------------------------->
+                    request                         redirect
+                                            <---------------------------
+                                                redirect with code
+
+----------------------------------------------------------------------------------
+
+                                            --------------------------->
+                                                request with code
+                                            <---------------------------
+                                                response with token
+
+                                            --------------------------->
+                                                request with token
+        <---------------------------        <---------------------------
+        redirect after setting session          response  
+        (authentication result)                 with user info
+
+
+# JWT
+[client]                            [server]                            [OPEN API]
+        --------------------------->        --------------------------->
+                    request                         redirect
+        <--------------------------------------------------------------
+                                redirect with code
+
+----------------------------------------------------------------------------------
+
+        --------------------------->        --------------------------->
+            request with code                   request with code
+                                            <---------------------------
+                                                response with token
+
+                                            --------------------------->
+                                                request with token
+        <---------------------------        <---------------------------
+            response with jwt                   response  
+            (authentication result)             with user info
